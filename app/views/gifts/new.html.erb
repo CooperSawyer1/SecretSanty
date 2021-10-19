@@ -1,0 +1,18 @@
+<h1>Add a new Gift!</h1>
+
+<%= form_for @gift do |form| %>
+
+<%= form.label :name %>
+<%= form.text_field :name %>
+<br>
+<%= form.label :price %>
+<%= form.text_field :price %>
+<br>
+<%= form.label :website %>
+<%= form.text_field :website %>
+<br>
+<%= form.label :price %>
+<%= form.number_field :price %>
+<br>
+<%= form.submit %>
+<% end %>
