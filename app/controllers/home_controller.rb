@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-  def index
-  end
+  # def index
+  #   @user = User.find(params[:id])
+  # end
 end

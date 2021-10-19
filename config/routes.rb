@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :users
   root to: "home#index"
 
+  resources :users, only: [:index, :show]
   resources :gift_lists, only: [:show, :index]
   resources :gifts, only: [:show, :index, :create, :new]
   # resources :sessions, only: [:new, :create, :destroy, :show, :index]
