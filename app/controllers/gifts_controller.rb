@@ -15,7 +15,6 @@ class GiftsController < ApplicationController
   def create
     @gift = Gift.new(gift_params)
     if @gift.save
-      flash[:success] = "Welcome to Secret Santy"
       redirect_to @gift
     else
       render :new

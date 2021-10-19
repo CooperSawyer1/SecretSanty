@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-
-  has_many :gifts
-  has_many :gift_lists, through: :gifts
-  has_secure_password
-  validates :name, presence: true
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end
