@@ -1,5 +1,7 @@
-<h1> List of gifts </h1>
+<h1> People on the list! </h1>
+
 <ul>
-  <% @gifts.each do |gift|%>
-    <li><%= gift.name %></li>
+  <% @gift_list.receivers.each do |receiver| %>
+    <li><%= receiver.name %></li>
+    <% end %>
 </ul>

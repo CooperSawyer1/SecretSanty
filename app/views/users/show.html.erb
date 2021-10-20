@@ -1,8 +1,27 @@
-<%= content_tag :h1, @current_user.name %>
 
-<%= @current_user %>
+<%= content_tag :h1, @user.name %>
 
+<%= @user.email%>
+  <h2> List's that you are on!</h2>
+  <ul> 
+    <% @user.all_gift_lists.each do |list| %>
+      <li><%= link_to list.title, @gift_lists %> </li>
+    <% end %>
+  </ul>
 
+  <h3>Gift's you want! </h3>
+    <ul>
+      <% @user.received_gifts.each do |gift| %>
+        <li><%= link_to gift.name, @gift %></li>
+      <% end %>
+    </ul>
 
+  <h3>Gift's you have given! </h3>
+    <ul>
+      <% @user.given_gifts.each do |gift| %>
+        <li><%= gift.name %></li>
+      <% end %>
+    </ul>
+    
 
 <%= link_to "Sign out", session_path, method:"delete" %>

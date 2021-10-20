@@ -1,6 +1,6 @@
-<%# <% if @user.present? %> %>
-  <%# <h1> <%= @user.email %> </h1> %>
-  <%# <% else %> %>
-  <%# <% redirect_to root_url %> %>
-<%# <% end %> %>
+<% if Current.user.present? %>
+  <h1> <%= Current.user.email %> </h1>
+   <% else %>
+  <% redirect_to root_url %> 
+<% end %>
 

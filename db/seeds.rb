@@ -28,18 +28,30 @@ gift_lists.each do |giftlist|
 end
 
 
-gifts = [{ name: "Super Soaker", price: 12.99, website:"http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Chicken Wing", price: 11.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Puppy Monkey baby", price: 123.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Mammoth", price: 12_322.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Bowling Ball", price: 2.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Candy", price: 0.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Alarm Clock", price: 34.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Ipod Shuffle", price: 283.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Iphone 12 Mini", price: 799.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Water Bottle", price: 223.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Soccer Ball", price: 27.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample },
-  { name: "Laptop", price: 345.99, website: "http://somethingcool.com", username: User.all.sample, gift_list: GiftList.all.sample }]
+gifts = [{ name: "Super Soaker", price: 12.99, website:"http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample, 
+           gift_list: GiftList.all.sample },
+         { name: "Chicken Wing", price: 11.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample, 
+           gift_list: GiftList.all.sample },
+         { name: "Puppy Monkey baby", price: 123.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample,
+           gift_list: GiftList.all.sample },
+         { name: "Mammoth", price: 12_322.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample,
+           gift_list: GiftList.all.sample },
+         { name: "Bowling Ball", price: 2.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample,
+           gift_list: GiftList.all.sample },
+         { name: "Candy", price: 0.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample,
+           gift_list: GiftList.all.sample },
+         { name: "Alarm Clock", price: 34.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample,
+           gift_list: GiftList.all.sample },
+         { name: "Ipod Shuffle", price: 283.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample,
+           gift_list: GiftList.all.sample },
+         { name: "Iphone 12 Mini", price: 799.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample,
+           gift_list: GiftList.all.sample },
+         { name: "Water Bottle", price: 223.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample,
+           gift_list: GiftList.all.sample },
+         { name: "Soccer Ball", price: 27.99, website: "http://somethingcool.com", giver: User.all.sample, receiver: User.all.sample,
+           gift_list: GiftList.all.sample },
+         { name: "Laptop", price: 345.99, website: "http://somethingcool.com", giver: User.all.sample, receiver:  User.all.sample,
+           gift_list: GiftList.all.sample }]
 
 gifts.each do |gift|
 Gift.create!(gift)
