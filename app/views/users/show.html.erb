@@ -3,11 +3,15 @@
 
 <%= @user.email%>
   <h2> List's that you are on!</h2>
-  <ul> 
-    <% @user.all_gift_lists.each do |list| %>
-      <li><%= link_to list.title, @gift_lists %> </li>
-    <% end %>
-  </ul>
+  <% if @user.gift_lists.present? %>
+    <ul> 
+      <% @user.gift_lists.each do |list| %>
+        <li><%= link_to list.title,  gift_list_path(list) %> </li>
+    </ul>
+      <% end %>
+  <% else %>
+      <%= render "form" %>
+  <% end %>
 
   <h3>Gift's you want! </h3>
     <ul>
@@ -15,6 +19,7 @@
         <li><%= link_to gift.name, @gift %></li>
       <% end %>
     </ul>
+    <%= render "gift_form" %>
 
   <h3>Gift's you have given! </h3>
     <ul>
@@ -24,4 +29,4 @@
     </ul>
     
 
-<%= link_to "Sign out", session_path, method:"delete" %>
+<%= link_to "Sign out", new_session_path, method: "delete" %>

@@ -1,5 +1,5 @@
 class GiftsController < ApplicationController
-  
+
   def index
     @gifts = Gift.all
   end
@@ -24,6 +24,6 @@ class GiftsController < ApplicationController
   private
 
   def gift_params
-    params.require(:gift).permit(:name, :price, :website, :user_id, :gift_list_id)
+    params.require(:gift).permit(:name, :price, :website, :receiver_id, :gift_list_id)
   end
 end

@@ -1,0 +1,15 @@
+<div>
+  <p> Add a new gift to your list</p>
+    <%= form_for @user.received_gifts, method: "post" do |form| %>
+      <%= form.label :name%>
+      <%= form.text_field :name%>
+      <br>
+      <%= form.label :price%>
+      <%= form.integer_field :price%>
+      <br>
+      <%= form.label :website%>
+      <%= form.text_field :website%>
+      <br>
+  <% form.submit %>
+  <% end %>
+</div>

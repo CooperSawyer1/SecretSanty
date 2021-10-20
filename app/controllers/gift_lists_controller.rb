@@ -7,4 +7,5 @@ class GiftListsController < ApplicationController
   def show
     @gift_list = GiftList.find(params[:id])
   end
+
 end

@@ -1,6 +1,11 @@
 <% if Current.user.present? %>
   <h1> <%= Current.user.email %> </h1>
    <% else %>
-  <% redirect_to root_url %> 
+  <% root_url %>
 <% end %>
 
+<h1> Welcome to Secret Santy.</h1> 
+
+<h2> If you are new here <%= link_to "Sign Up", new_user_path %> </h2>
+
+<h2> If you are a returning user <%= link_to "log In", new_session_path %> </h2>
