@@ -1,29 +1,31 @@
-<h1> Sign up for Secret Santy Below!</h1>
-<% if @user.errors.any? %>
-<ul>
-  <% @user.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
-<br>
-<%= form_for @user do |form| %>
+<div class="container">
+  <h1> Sign up for Secret Santy Below!</h1>
+    <div>
+      <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+      <ul>
+          <%= form_for @user do |form| %>
+          <%=form.label :name %>
+          <%=form.text_field :name%>
 
-<%=form.label :name %>
-<%=form.text_field :name%>
-<br>
-<br>
-<%=form.label :username %>
-<%=form.text_field :username%>
-<br>
-<br>
-<%=form.label :email %>
-<%=form.email_field :email%>
-<br>
-<br>
-<%=form.label :password %>
-<%=form.password_field :password%>
-<br>
-<br>
-<%= form.submit %>
-<% end %>
+          <%=form.label :username %>
+          <%=form.text_field :username%>
+
+          <%=form.label :email %>
+          <%=form.email_field :email%>
+
+          <%=form.label :password %>
+          <%=form.password_field :password%>
+      </ul>
+      <%= form.hidden_field :secret_santa_id%>
+        <button type="button" class="btn btn-primary"><%= form.submit %>
+        <% end %>
+        </button>
+
+    </div>    
+</div>

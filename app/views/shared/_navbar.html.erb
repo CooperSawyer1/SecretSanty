@@ -1,1 +1,17 @@
-<h1>This is where the NavBar will go</h1>
+
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <%= link_to "Home", root_url, class: "nav-link" %>
+  </li>
+  <% if current_user.present? %>
+  <li class="nav-item">
+    <%= link_to "Your Profile", current_user, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Your Gift List", user_gifts_path(current_user), class: "nav-link"  %>
+  </li>
+  <% end %>
+  <li class="nav-item">
+    <%= link_to "Log Out", sessions_path , method: :delete, class: "nav-link" %>
+  </li>
+</ul>

@@ -1,7 +1,8 @@
 class GiftsController < ApplicationController
-
+  # before_action :set_current_user
+  
   def index
-    @gifts = Gift.all
+    @gifts = Gift.where(user_id: current_user&.id)
   end
 
   def show
@@ -15,7 +16,7 @@ class GiftsController < ApplicationController
   def create
     @gift = Gift.new(gift_params)
     if @gift.save
-      redirect_to @gift
+      redirect_to user_gifts_path(current_user)
     else
       render :new
     end
@@ -24,6 +25,6 @@ class GiftsController < ApplicationController
   private
 
   def gift_params
-    params.require(:gift).permit(:name, :price, :website, :receiver_id, :gift_list_id)
+    params.require(:gift).permit(:name, :price, :website, :user_id, :giver_id)
   end
 end

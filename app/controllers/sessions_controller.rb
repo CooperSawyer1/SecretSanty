@@ -1,24 +1,22 @@
 class SessionsController < ApplicationController
-  skip_before_action :set_current_user, only: [:new, :create]
+  # before_action :set_current_user
+
 
   def new
   end
 
   def create
-    session_params = params.permit(:email, :password)
-    @user = User.find_by(email: session_params[:email])
-    if @user && @user.authenticate(session_params[:password])
-      session[:user_id] = @user.id
-      redirect_to @user
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to user_path(user)
     else
-      flash[:notice] = "Login is invalid!"
-      redirect_to new_session_path
+      render "login_path"
     end
   end
 
   def destroy
-    session[:user_id] = nil
-    flash[:notice] = "You have been signed out!"
-    redirect_to root_path
+    session.clear
+    redirect_to login_path
   end
 end

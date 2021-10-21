@@ -1,5 +1,0 @@
-  <p> If you aren't on a list, select one from below </p>
-  <%= form_for @user, url: gift_lists_path(@user), method: "post" do |form| %>
-  <%= form.collection_select :gift_lists, GiftList.all, :id, :title %>
-    <%= form.submit %>
-  <% end %>

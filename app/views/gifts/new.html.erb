@@ -1,18 +1,17 @@
-<h1>Add a new Gift!</h1>
-
-<%= form_for @gift do |form| %>
-
-<%= form.label :name %>
-<%= form.text_field :name %>
-<br>
-<%= form.label :price %>
-<%= form.text_field :price %>
-<br>
-<%= form.label :website %>
-<%= form.text_field :website %>
-<br>
-<%= form.label :price %>
-<%= form.number_field :price %>
-<br>
-<%= form.submit  %>
-<% end %>
+<div class="field">
+  <p> Add a new gift to your list</p>
+    <%= form_for @gift do |form| %>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+      <br>
+      <%= form.label :price %>
+      <%= form.number_field :price %>
+      <br>
+      <%= form.label :website %>
+      <%= form.text_field :website %>
+      <br>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+      <%= form.hidden_field :giver_id, value: 1 %>
+    <%= form.submit %>
+    <% end %>
+</div>
