@@ -5,12 +5,12 @@
 <div>Email: <%= current_user.email%>
 <br>
 <br>
-  <h3>Here are the gift's you want! </h3>
+  <h2>Here is your wish list! </h2>
     <ul>
         <% current_user.gifts.each do |gift| %>
         <li><%= link_to gift.name, gift_path %></li>
       <% end %>
     </ul>
-    <h4>Can't find a gift you want, add it <%= link_to "here", new_gift_path(current_user) %></h4>
+    <h2>Can't find a gift you want, add it <%= link_to "here", new_gift_path(current_user) %></h2>
 
 </div>

@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ 
+ h1 {
+  color:red;
+}
+
+h2 {
+  color: green;
+}
+
+.btn {
+  color: color-contrast(red)
+}

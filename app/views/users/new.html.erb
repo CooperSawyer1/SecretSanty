@@ -11,30 +11,33 @@
     </div>
 
   <div class="card d-flex justify-content-center" style="width: 400px">
-    <div form style="width: 360px">
+    <form style="width: 360px">
       <%= form_for @user do |form| %>
-          <div class="mb-3">
-              <label for="name" class="col-form-label"><%=form.label :name %></label>
-              <input type=<%form.text_field :name%> id="name" class="form-control" aria-describedby="nameHelpInline">
-          </div> 
-
-          <div class="mb-3"> 
-              <label for="email" class="col-form-label"><%=form.label :email %></label>
-              <input type=<%form.email_field :email%> id="email" class="form-control" aria-describedby="emailHelpInline">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <div class="mb-3"> 
-              <label for="inputPassword6" class="col-form-label"><%=form.label :password %></label>
-              <input type=<%form.password_field :password%> id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-              <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-              </span>
-          </div>
-          <%= form.hidden_field :secret_santa_id%>
-          <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-primary" type="button" ><%= form.submit %></button>
-          <% end %>
-          </div>
-      </form>
-    </div>
+        <div class="mb-3">
+            <%= form.label :name %>
+            <%= form.text_field :name%>
+        </div> 
+        <div class="mb-3">
+            <%= form.label :username %>
+            <%= form.text_field :username%>
+        </div> 
+        <div class="mb-3"> 
+            <%= form.label :email %>
+            <%= form.email_field :email%>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3"> 
+            <%= form.label :password %>
+            <%= form.password_field :password%>
+            <span id="passwordHelpInline" class="form-text">
+              Must be 8-20 characters long.
+            </span>
+        </div>
+        <%= form.hidden_field :secret_santa_id%>
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="button" ><%= form.submit %></button>
+        <% end %>
+        </div>
+    </form>
+  </div>
 </div>
