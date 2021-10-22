@@ -2,15 +2,16 @@
 <div class= "container">
 <h1>Welcome <%= current_user.name %></h1>
 <br>
-<div>Email: <%= current_user.email%>
+<div>
+<h2>Email: <%= current_user.email%></h2>
 <br>
 <br>
   <h2>Here is your wish list! </h2>
     <ul>
-        <% current_user.gifts.each do |gift| %>
+        <%current_user.gifts.each do |gift| %>
         <li><%= link_to gift.name, gift_path %></li>
       <% end %>
     </ul>
-    <h2>Can't find a gift you want, add it <%= link_to "here", new_gift_path(current_user) %></h2>
+    <h2>Add more gifts <%= link_to "here", new_gift_path(current_user) %></h2>
 
 </div>

@@ -9,8 +9,10 @@
       <%= form_for(:session, url: login_path) do |form| %>
           <div class="mb-3">
             <%= form.label :email %>
-            <%= form.email_field :email %>
           </div> 
+          <div class="mb-3">
+            <%= form.email_field :email %>
+          </div>           
           <div class="mb-3 justify-content-center">
             <%= form.label :password%>
             <%= form.password_field :password %>
