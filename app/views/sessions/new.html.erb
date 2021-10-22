@@ -1,11 +1,25 @@
+<div class="container-fluid" style="align-items-center">
+  <div>
+    <h1>Welcome to Secret Santy, if you are a returning user please sign in below!</h1>
+  </div>
+  <br>
+<div class= "card" style="width: 280px">
+  <%= form_for(:session, url: login_path) do |form| %>
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item"><%= form.label :email %><%=form.email_field :email %></li>  
 
-<h1>Welcome to Secret Santy, please sign in!</h1>
-<%= form_tag (sessions_path) do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-
-  <%= label_tag :password%>
-  <%= text_field_tag :password %> 
-
-  <%= submit_tag "Login" %>
-<% end %>
+  <li class="list-group-item"><%= form.label :password%><%= form.password_field :password %></li>  
+<br>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button type="button" class="btn btn-primary"><%= form.submit "Login" %></button>
+    <% end %>
+  </div>
+  </ul>
+<br>
+</div>
+<br>
+  <div>
+    <h1>If you are a new user Sign up <%= link_to " here", new_user_path %></h1>
+  </div>
+  
+</div>

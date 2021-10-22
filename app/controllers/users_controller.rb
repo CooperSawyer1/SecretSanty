@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only:[:new, :create]
+  skip_before_action :require_user, only: [:new, :create]
 
   def index
     @users = User.all
@@ -14,8 +14,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(username:params[:user][:username])
-    @user.password = params[:user][:password]
+    @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
       redirect_to @user
@@ -27,6 +26,6 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :username, :email, :password, :secret_santa_id)
+      params.require(:user).permit(:name, :username, :email, :password, :secret_santa_id, :user_id)
     end
 end

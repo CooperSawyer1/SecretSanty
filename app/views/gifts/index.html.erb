@@ -5,3 +5,6 @@
     <li><%= link_to gift.name, gift %> </li>
   <% end %>
 </ul>
+<br>
+<br>
+<h4>Can't find a gift you want, add it <%= link_to "here", new_gift_path(current_user) %></h4>
