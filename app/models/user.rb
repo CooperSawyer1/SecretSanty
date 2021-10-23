@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   has_many :gifts
 
-  validates :name, presence: true
+  validates :name, :username, :email, :password,  presence: true
   validates :username, uniqueness: true
   validates :password, length: { in: 8..20 }
   validates :email, uniqueness: true
