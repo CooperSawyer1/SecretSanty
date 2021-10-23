@@ -1,24 +1,7 @@
-# README
+##Read me
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#This app is called Secret Santy and it is in the beginning stages. 
+#I have gotten authentication, nested routes as well as the ability to add gifts to a persons list. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##To get started download the download the repo, cd into the directory and start the rails server and you will be
+#sent to a login page. 
