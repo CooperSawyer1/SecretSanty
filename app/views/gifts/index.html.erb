@@ -1,8 +1,16 @@
-<h1 class="text-align: center">List of gifts </h1>
-<ul>
-  <% @gifts.each do |gift| %>
-    <li><%= link_to gift.name, gift %> </li>
-  <% end %>
-</ul>
+<div class= "container" style="justify-align-center">
+  <div class="card bg-success mb-3" style="max-width: 18rem;">
+    <div class="card-header" style="width: 250px"><h4 class="card-title">List of gifts</h4></div>
+      <div class="card-body" style="width: 250px">
+          <ol class="list-group list-group-numbered">
+            <% @gifts.each do |gift| %>
+            <li class="list-group-item"><%= link_to gift.name, gift_path(gift) %> </li>
+            <% end %>
+          </ol>
+      </div>
+    </div>
+      <br>
+      <h1> Add a new gift <%= link_to "here", new_gift_path(current_user)%></h1>
+  </div>
+</div>
 
-<h2> Add a new gift <%= link_to "here", new_gift_path(current_user)%>

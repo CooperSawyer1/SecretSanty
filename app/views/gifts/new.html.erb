@@ -1,24 +1,33 @@
-<div class="field" style="align-center">
-  <p> Add a new gift to your list</p>
-  
-  <div class= "card d-flex justify-content-center" style="width: 280px">
-    <div form style="width: 250px">
+<div class="field" style="card-align-center">
+  <h2> Add a new gift to your list</h2>
+      <div>
+      <ul>
+        <% if @gift.errors.any? %>
+          <% @gift.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+      <% end %>
+    </div>
+  <div class= "card d-flex justify-content-center" style="width: 250px">
+    <div form class="row g-3" style="width: 250px">
         <%= form_for @gift do |form| %>
-          <div class="mb-3">
+          <div class="col-8 mx-auto">
               <%=form.label :name %>
               <%=form.text_field :name%>
           </div>
-          <div class="mb-3">
+          <div class="col-8 mx-auto">
               <%=form.label :price %>
               <%=form.number_field :price %>
           </div>
-          <div class="mb-3">
+          <div class="col-8 mx-auto">
             <%=form.label :website %>
             <%=form.text_field :website %>
           </div>
           <%=form.hidden_field :user_id, value: current_user.id %>
           <%=form.hidden_field :giver_id, value: 1 %>
-          <div class="d-grid gap-2 col-6 mx-auto">
+          <br>
+          <div class="col-5 mx-auto">
             <button type="button" class="btn btn-primary"><%= form.submit %></button>
           </div>
       <% end %>

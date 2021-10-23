@@ -1,17 +1,17 @@
 
-<div class= "container">
-<h1>Welcome <%= current_user.name %></h1>
-<br>
-<div>
-<h2>Email: <%= current_user.email%></h2>
-<br>
-<br>
-  <h2>Here is your wish list! </h2>
-    <ul>
-        <%current_user.gifts.each do |gift| %>
-        <li><%= link_to gift.name, gift_path %></li>
-      <% end %>
-    </ul>
-    <h2>Add more gifts <%= link_to "here", new_gift_path(current_user) %></h2>
-
+<div class= "container" style="align-center">
+  <div class="card text-dark bg-light mb-3" style="max-width: 550px;">
+  <div class="card-header"><h1>Welcome <%= current_user.name %></h1></div>
+  <div class="card-body">
+    <h2 class="card-title">Email: <%= current_user.email%></h5>
+    <p class="card-text">
+      <h2>Here is your wish list! </h2>
+        <ul>
+            <%current_user.gifts.each do |gift| %>
+            <li><%= link_to gift.name, gift_path(gift) %></li>
+          <% end %>
+        </ul>
+      <h2>Add more gifts <%= link_to "here", new_gift_path(current_user) %></h2>
+  </p>
+  </div>
 </div>

@@ -1,4 +1,14 @@
 
-<h1>Gift: <%= @gift.name%> </h1>
-<h2> Price: $ <%= @gift.price %><h2>
-<h3> Website to buy: <%= link_to "Purchase Here", @gift.website , :target => "_blank" %> <h3>
+
+
+
+<div class= "container" style="align-center">
+  <div class="card text-dark bg-light mb-3" style="max-width: 400px;">
+    <div class="card-header"><h1>Gift: <%= @gift.name%> </h1></div>
+      <div class="card-body">
+        <h2 class="card-title">Price: $ <%= @gift.price %></h2>
+        <h3 class="card-title">Website to buy: <%= link_to "purchase here", @gift.website , :target => "_blank" %><h3>
+      </div>
+    </div>
+  </div>
+</div>
