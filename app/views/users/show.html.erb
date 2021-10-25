@@ -8,10 +8,10 @@
       <h2>Here is your wish list! </h2>
         <ul>
             <%current_user.gifts.each do |gift| %>
-            <li><%= link_to gift.name, gift_path(gift) %></li>
+            <li><%= link_to gift.name, user_gift_path(current_user, gift) %></li>
           <% end %>
         </ul>
-      <h2>Add more gifts <%= link_to "here", new_gift_path(current_user) %></h2>
+      <h2>Add more gifts <%= link_to "here", new_user_gift_path(current_user) %></h2>
   </p>
   </div>
 </div>

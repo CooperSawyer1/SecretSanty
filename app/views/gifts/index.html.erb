@@ -4,13 +4,13 @@
       <div class="card-body" style="width: 250px">
           <ol class="list-group list-group-numbered">
             <% @gifts.each do |gift| %>
-            <li class="list-group-item"><%= link_to gift.name, gift_path(gift) %> </li>
+            <li class="list-group-item"><%= link_to gift.name, user_gift_path(current_user, gift) %> </li>
             <% end %>
           </ol>
       </div>
     </div>
       <br>
-      <h1> Add a new gift <%= link_to "here", new_gift_path(current_user)%></h1>
+      <h1> Add a new gift <%= link_to "here", new_user_gift_path(current_user)%></h1>
   </div>
 </div>
 
