@@ -1,6 +1,6 @@
-##Read me
+# Read me
 
-<<<<<<< HEAD
+
 # Welcome to Secret Santy. 
   The goal of this project was to make a secret santa website.
 
