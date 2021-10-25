@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root to: "home#index"
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -6,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :create, :new, :delete] do 
     resources :gifts, only: [:show, :index, :create, :new]
-  end  
+  end
+  resources :brands, only: [:show, :index]
 end

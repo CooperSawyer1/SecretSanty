@@ -10,6 +10,9 @@
   <button class="btn btn-outline-success me-2" type="button">
     <%= link_to "Your Gift List", user_gifts_path(current_user), class: "nav-link"  %>
   </button>
+    <button class="btn btn-outline-success me-2" type="button">
+    <%= link_to "Your Brand List", brand_path(current_user), class: "nav-link"  %>
+  </button>
   <button class="btn btn-outline-success me-2" type="button">
     <%= button_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
   </button>

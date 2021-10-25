@@ -24,6 +24,10 @@
             <%=form.label :website %>
             <%=form.text_field :website %>
           </div>
+          <div class="col-8 mx-auto">
+            <%=form.label :brand_id %>
+            <%=form.collection_select :brand_id, Brand.all, :id, :name  %>
+          </div>
           <%=form.hidden_field :user_id, value: current_user.id %>
           <%=form.hidden_field :giver_id, value: 1 %>
           <br>

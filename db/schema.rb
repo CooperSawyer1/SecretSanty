@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_19_201301) do
+ActiveRecord::Schema.define(version: 2021_10_25_181530) do
+
+  create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "gifts", force: :cascade do |t|
     t.string "name"
@@ -20,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_201301) do
     t.integer "giver_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "brand_id"
   end
 
   create_table "users", force: :cascade do |t|
