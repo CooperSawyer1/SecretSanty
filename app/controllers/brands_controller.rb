@@ -5,7 +5,7 @@ class BrandsController < ApplicationController
   end
 
   def show
-    @gifts = Gift.all
+    @gifts = Gift.where(user_id: current_user&.id)
     @brand = Brand.find(params[:id])
   end
 
