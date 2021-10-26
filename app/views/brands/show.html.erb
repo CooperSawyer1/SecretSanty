@@ -1,7 +1,13 @@
-<h1> Here are the brands you love!</h1>
-
-<ul>
-<% @brands.each do |brand|%>
-  <li><%= brand.name%></li>
-<% end%>
-</ul>
+<div class= "container" style="align-center">
+  <div class="card text-dark bg-light mb-3" style="max-width: 550px;">
+  <div class="card-header"><h1>Here are the brands you love!</h1></div>
+  <div class="card-body">
+    
+    <p class="card-text">
+      <ol> <% @gifts.each do |gift| %>
+        <li><%= gift.brand.name %></li>
+      <% end %>
+      </ol>
+    </p>
+  </div>
+</div>
