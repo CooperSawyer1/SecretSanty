@@ -7,4 +7,3 @@ class Gift < ApplicationRecord
   # belongs_to :giver, class_name: "User", foreign_key: "giver_id", optional: true
   # scope :find_current_user, -> { where(user_id: current_user&.id) }
 end
-

@@ -3,6 +3,7 @@ require "rails_helper"
 
 RSpec.describe Gift, type: :model do
   describe "associations" do
+
     it { should belong_to(:user).class_name("User") }
     it { should belong_to(:brand).class_name("Brand") }
   end
@@ -12,6 +13,11 @@ RSpec.describe Gift, type: :model do
     it { should validate_presence_of(:price) }
     it { should validate_presence_of(:website) }
     it { should validate_presence_of(:brand) }
-
+    # it { should allow_value(valid_names).for(:website) }
   end
+
+  # def valid_names
+  #   %w[ http http ]
+  # end
+
 end
