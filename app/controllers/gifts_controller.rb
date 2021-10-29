@@ -2,7 +2,7 @@ class GiftsController < ApplicationController
   # before_action :set_current_user
 
   def index
-    @gifts = Gift.where(user_id: current_user&.id)
+    @gifts = Gift.for_user(current_user)
   end
 
   def show
