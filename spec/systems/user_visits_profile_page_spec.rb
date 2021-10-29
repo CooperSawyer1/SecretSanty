@@ -1,13 +1,17 @@
 require "rails_helper"
 
-describe "when a user visits their profile page" do 
+describe "when a user visits their profile page", type: :system do 
   it "they can see a list of their gifts " do
+
     user = create_user
     brand = create_brand
     gift = create_gift
-    
-    visit user_path(user, brand, gift)
 
+    page.set_rack_session(user_id: user.id)
+    visit user_path(user)
+
+    expect(page).to have_content user.name
+    expect(page).to have_link { user.gifts.name }, href: user_gifts_path(user)
   end
 
   def create_user

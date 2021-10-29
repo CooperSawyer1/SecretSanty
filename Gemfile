@@ -3,7 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 gem 'nokogiri'
-gem 'rack', '~> 2.0.1'
+gem 'rack', "~> 2.2.3"
+gem "rack-test", "~> 1.1.0"
+gem 'rack_session_access'
 gem 'rspec'
 # gem 'devise-security'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
